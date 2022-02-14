@@ -144,6 +144,29 @@
   width: 17rem;
   height: 14rem;
 }
+.imgHover {
+  text-align: center;
+  position: relative;
+  perspective: 500px;
+}
+.imgDetails {
+  width: 80%;
+  height: 70%;
+  padding: 5% 8%;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(90deg);
+  transform-origin: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transition: all 0.4s ease-in;
+}
+.imgHover:hover .imgDetails {
+  transform: translate(-50%, -50%) rotateY(0deg);
+  opacity: 1;
+}
 /* #shop-item-caption */
 .shop-item-caption {
   color: white;
