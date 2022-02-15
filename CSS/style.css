@@ -9,7 +9,7 @@
   display: grid;
   justify-items: center;
   grid-template-rows: 15vh auto;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 /* Header Style */
 .topHeader {
@@ -121,6 +121,27 @@
 .hidden {
   display: none;
 }
+/* Selector Box */
+.selector {
+  background-color: #373838;
+  width: 86vw;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  text-align: center;
+}
+.selectorLbl {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 5px;
+}
+.selectorSelect {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+}
 /* Content Of All Video Cards */
 .mainContent {
   background-color: #373838;
@@ -189,6 +210,9 @@
   align-self: flex-start;
 }
 /* Video Card Badge */
+.videoEpisode {
+  left: 50%;
+}
 .videoDate {
   top: 100%;
   left: 75%;

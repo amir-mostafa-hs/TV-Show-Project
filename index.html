@@ -82,6 +82,13 @@
       </div>
     </div>
     <!-- Content Of All Video Cards -->
+    <!-- Selector Box -->
+    <aside class="selector">
+        <label for="videoSelect" class="selectorLbl">Select Episode</label>
+        <select id="videoSelect" class="form-select selectorSelect" name="selectorSelect">
+            <option value=""> --- All Episode --- </option>
+        </select>
+    </aside>
     <main class="mainContent">
       <aside class="asideVideoCard">
         <!-- Video Card Content -->
@@ -101,6 +108,9 @@
               </p>
             </div>
             <!-- Video Card Date -->
+            <span class="position-absolute translate-middle badge rounded-pill bg-danger videoEpisode">
+                S00E00
+            </span>
             <span
               class="position-absolute translate-middle badge rounded-pill bg-danger videoDate"
             >
