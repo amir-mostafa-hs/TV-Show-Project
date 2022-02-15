@@ -21,14 +21,19 @@
     <title>TV Show Project</title>
   </head>
   <body class="content">
+    <!-- Start Header -->
     <header class="topHeader">
+      <!-- Header Logo -->
       <a href="index.html"><i class="bi bi-collection-play-fill"></i></a>
+      <!-- Start Navbar -->
       <nav class="navMenu">
+        <!-- Navbar Menu -->
         <ul class="itemMenu">
           <li><a href="index.html">Home</a></li>
           <li><a href="#">Move</a></li>
           <li><a href="#">About us</a></li>
         </ul>
+        <!-- Navbar Form Search -->
         <form class="d-flex topSearchBox">
           <input
             class="form-control me-2"
@@ -39,19 +44,31 @@
           <button class="btn btn-outline-warning" type="submit">Search</button>
         </form>
       </nav>
+      <!-- End Navbar -->
     </header>
+    <!-- End Header -->
+    <!-- Create Div For Show Video Details -->
     <div class="aboutDiv hidden">
+      <!-- 
+            Div with class *aboutDiv* to create a blur page on the main page
+         -->
       <div class="aboutDivShow">
+        <!-- 
+              Div with class *aboutDivShow* to create a showbox box to show video details
+           -->
         <div class="aboutDivClose">
-          <span class="btn btn-outline-danger close-btn"
+          <!-- ShowBox Buttom Close -->
+          <span class="btn btn-outline-danger closeBtn"
             ><i class="bi bi-x-circle"></i
           ></span>
         </div>
+        <!-- Video Image -->
         <img
           src="https://static.tvmaze.com/uploads/images/original_untouched/8/21961.jpg"
           class="img-thumbnail aboutDivImg"
           alt=""
         />
+        <!-- Video Details -->
         <div class="aboutDivText">
           <p>
             Former Louisiana State CID partners Martin Hart and Rustin Cohle
@@ -64,315 +81,86 @@
         </div>
       </div>
     </div>
-    <main class="mainWeb">
-      <aside class="aside-shop-item">
-        <!-- #shop-item -->
-        <figure class="shop-item">
-          <div class="position-relative">
-            <!-- #shop-item-image -->
+    <!-- Content Of All Video Cards -->
+    <!-- Selector Box -->
+    <aside class="selector">
+        <label for="videoSelect" class="selectorLbl">Select Episode</label>
+        <select id="videoSelect" class="form-select selectorSelect" name="selectorSelect">
+            <option value=""> --- All Episode --- </option>
+        </select>
+    </aside>
+    <main class="mainContent">
+      <aside class="asideVideoCard">
+        <!-- Video Card Content -->
+        <figure class="videoCard">
+          <!-- Video Card Image -->
+          <div class="position-relative imgHover">
             <img
-              class="img-thumbnail shop-item-image"
+              class="img-thumbnail videoCardImage"
               src="https://static.tvmaze.com/uploads/images/original_untouched/8/21961.jpg"
-              alt="کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th"
+              alt="The Long Bright Dark"
             />
-            <!-- #shop-item-image-offer -->
+            <!-- Image Details -->
+            <div class="imgDetails">
+              <p>
+                Former Louisiana State CID partners Martin Hart and Rustin Cohle
+                give separate statements to a pair ...
+              </p>
+            </div>
+            <!-- Video Card Date -->
+            <span class="position-absolute translate-middle badge rounded-pill bg-danger videoEpisode">
+                S00E00
+            </span>
             <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger airdate"
+              class="position-absolute translate-middle badge rounded-pill bg-danger videoDate"
             >
               2014-01-12</span
             >
-            <!-- #shop-item-image-score -->
+            <!-- Video Card Score -->
             <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger score"
+              class="position-absolute translate-middle badge rounded-pill bg-danger videoScore"
             >
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
+              <i class="bi bi-star-fill videoScoreBadge"></i>
+              <i class="bi bi-star-fill videoScoreBadge"></i>
+              <i class="bi bi-star-fill videoScoreBadge"></i>
+              <i class="bi bi-star-fill videoScoreBadge"></i>
+              <i class="bi bi-star-fill videoScoreBadge"></i>
             </span>
           </div>
-          <!-- #shop-item-caption -->
-          <figcaption class="shop-item-caption">
-            کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th
-          </figcaption>
-          <!-- #shop-item-button -->
-          <div class="btn-item-div">
-            <button type="button" class="btn bg-danger btn-item-shop">
-              <i class="bi bi-play-circle btn-item-one"></i>
-              <i class="bi bi-play-circle-fill btn-item-two"></i>
+          <!-- Video Card Name -->
+          <figcaption class="videoName">The Long Bright Dark</figcaption>
+          <!-- Video Card Button -->
+          <div class="videoCardBtn">
+            <!-- Video Card Play Buttom -->
+            <button type="button" class="btn bg-danger videoCardPlayBtn">
+              <i class="bi bi-play-circle playBtnIconOne"></i>
+              <i class="bi bi-play-circle-fill playBtnIconTwo"></i>
             </button>
-            <div class="btn-left-about bg-danger" id="test">
+            <div class="videoCardPlayBtnPopUp bg-danger">
               <span>Play</span>
             </div>
-            <button type="button" class="btn bg-danger btn-item-like">
-              <i class="bi bi-clock btn-item-one"></i>
-              <i class="bi bi-clock-fill btn-item-two"></i>
+            <!-- Video Card Time Buttom -->
+            <button type="button" class="btn bg-danger videoCardTimeBtn">
+              <i class="bi bi-clock playBtnIconOne"></i>
+              <i class="bi bi-clock-fill playBtnIconTwo"></i>
             </button>
-            <div class="btn-right-about bg-danger">
-              <span>Time</span>
-            </div>
-          </div>
-        </figure>
-      </aside>
-      <aside class="aside-shop-item">
-        <!-- #shop-item -->
-        <figure class="shop-item">
-          <div class="position-relative">
-            <!-- #shop-item-image -->
-            <img
-              class="img-thumbnail shop-item-image"
-              src="https://static.tvmaze.com/uploads/images/original_untouched/8/21961.jpg"
-              alt="کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th"
-            />
-            <!-- #shop-item-image-offer -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger airdate"
-            >
-              2014-01-12</span
-            >
-            <!-- #shop-item-image-score -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger score"
-            >
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-            </span>
-          </div>
-          <!-- #shop-item-caption -->
-          <figcaption class="shop-item-caption">
-            کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th
-          </figcaption>
-          <!-- #shop-item-button -->
-          <div class="btn-item-div">
-            <button type="button" class="btn bg-danger btn-item-shop">
-              <i class="bi bi-play-circle btn-item-one"></i>
-              <i class="bi bi-play-circle-fill btn-item-two"></i>
-            </button>
-            <div class="btn-left-about bg-danger" id="test">
-              <span>Play</span>
-            </div>
-            <button type="button" class="btn bg-danger btn-item-like">
-              <i class="bi bi-clock btn-item-one"></i>
-              <i class="bi bi-clock-fill btn-item-two"></i>
-            </button>
-            <div class="btn-right-about bg-danger">
-              <span>Time</span>
-            </div>
-          </div>
-        </figure>
-      </aside>
-      <aside class="aside-shop-item">
-        <!-- #shop-item -->
-        <figure class="shop-item">
-          <div class="position-relative">
-            <!-- #shop-item-image -->
-            <img
-              class="img-thumbnail shop-item-image"
-              src="https://static.tvmaze.com/uploads/images/original_untouched/8/21961.jpg"
-              alt="کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th"
-            />
-            <!-- #shop-item-image-offer -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger airdate"
-            >
-              2014-01-12</span
-            >
-            <!-- #shop-item-image-score -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger score"
-            >
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-            </span>
-          </div>
-          <!-- #shop-item-caption -->
-          <figcaption class="shop-item-caption">
-            کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th
-          </figcaption>
-          <!-- #shop-item-button -->
-          <div class="btn-item-div">
-            <button type="button" class="btn btn-success btn-item-shop">
-              <i class="bi bi-play-circle btn-item-one"></i>
-              <i class="bi bi-play-circle-fill btn-item-two"></i>
-            </button>
-            <div class="btn-left-about bg-success" id="test">
-              <span>Play</span>
-            </div>
-            <button type="button" class="btn btn-success btn-item-like">
-              <i class="bi bi-clock btn-item-one"></i>
-              <i class="bi bi-clock-fill btn-item-two"></i>
-            </button>
-            <div class="btn-right-about bg-success">
-              <span>Time</span>
-            </div>
-          </div>
-        </figure>
-      </aside>
-      <aside class="aside-shop-item">
-        <!-- #shop-item -->
-        <figure class="shop-item">
-          <div class="position-relative">
-            <!-- #shop-item-image -->
-            <img
-              class="img-thumbnail shop-item-image"
-              src="https://static.tvmaze.com/uploads/images/original_untouched/8/21961.jpg"
-              alt="کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th"
-            />
-            <!-- #shop-item-image-offer -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger airdate"
-            >
-              2014-01-12</span
-            >
-            <!-- #shop-item-image-score -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger score"
-            >
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-            </span>
-          </div>
-          <!-- #shop-item-caption -->
-          <figcaption class="shop-item-caption">
-            کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th
-          </figcaption>
-          <!-- #shop-item-button -->
-          <div class="btn-item-div">
-            <button type="button" class="btn btn-success btn-item-shop">
-              <i class="bi bi-play-circle btn-item-one"></i>
-              <i class="bi bi-play-circle-fill btn-item-two"></i>
-            </button>
-            <div class="btn-left-about bg-success" id="test">
-              <span>Play</span>
-            </div>
-            <button type="button" class="btn btn-success btn-item-like">
-              <i class="bi bi-clock btn-item-one"></i>
-              <i class="bi bi-clock-fill btn-item-two"></i>
-            </button>
-            <div class="btn-right-about bg-success">
-              <span>Time</span>
-            </div>
-          </div>
-        </figure>
-      </aside>
-      <aside class="aside-shop-item">
-        <!-- #shop-item -->
-        <figure class="shop-item">
-          <div class="position-relative">
-            <!-- #shop-item-image -->
-            <img
-              class="img-thumbnail shop-item-image"
-              src="https://static.tvmaze.com/uploads/images/original_untouched/8/21961.jpg"
-              alt="کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th"
-            />
-            <!-- #shop-item-image-offer -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger airdate"
-            >
-              2014-01-12</span
-            >
-            <!-- #shop-item-image-score -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger score"
-            >
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-            </span>
-          </div>
-          <!-- #shop-item-caption -->
-          <figcaption class="shop-item-caption">
-            کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th
-          </figcaption>
-          <!-- #shop-item-button -->
-          <div class="btn-item-div">
-            <button type="button" class="btn btn-success btn-item-shop">
-              <i class="bi bi-play-circle btn-item-one"></i>
-              <i class="bi bi-play-circle-fill btn-item-two"></i>
-            </button>
-            <div class="btn-left-about bg-success" id="test">
-              <span>Play</span>
-            </div>
-            <button type="button" class="btn btn-success btn-item-like">
-              <i class="bi bi-clock btn-item-one"></i>
-              <i class="bi bi-clock-fill btn-item-two"></i>
-            </button>
-            <div class="btn-right-about bg-success">
-              <span>Time</span>
-            </div>
-          </div>
-        </figure>
-      </aside>
-      <aside class="aside-shop-item">
-        <!-- #shop-item -->
-        <figure class="shop-item">
-          <div class="position-relative">
-            <!-- #shop-item-image -->
-            <img
-              class="img-thumbnail shop-item-image"
-              src="https://static.tvmaze.com/uploads/images/original_untouched/8/21961.jpg"
-              alt="کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th"
-            />
-            <!-- #shop-item-image-offer -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger airdate"
-            >
-              2014-01-12</span
-            >
-            <!-- #shop-item-image-score -->
-            <span
-              class="position-absolute translate-middle badge rounded-pill bg-danger score"
-            >
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-              <i class="bi bi-star-fill score-badge"></i>
-            </span>
-          </div>
-          <!-- #shop-item-caption -->
-          <figcaption class="shop-item-caption">
-            کامپیوتر دسکتاپ ام اس آی مدل MEG Aegis Ti5 11th
-          </figcaption>
-          <!-- #shop-item-button -->
-          <div class="btn-item-div">
-            <button type="button" class="btn btn-success btn-item-shop">
-              <i class="bi bi-play-circle btn-item-one"></i>
-              <i class="bi bi-play-circle-fill btn-item-two"></i>
-            </button>
-            <div class="btn-left-about bg-success" id="test">
-              <span>Play</span>
-            </div>
-            <button type="button" class="btn btn-success btn-item-like">
-              <i class="bi bi-clock btn-item-one"></i>
-              <i class="bi bi-clock-fill btn-item-two"></i>
-            </button>
-            <div class="btn-right-about bg-success">
-              <span>Time</span>
+            <div class="videoCardTimeBtnPopUp bg-danger">
+              <span class="showTime">60Min</span>
             </div>
           </div>
         </figure>
       </aside>
     </main>
+    <!-- Start Footer -->
     <footer class="bottomFooter">
+      <!-- Footer Abute Box -->
       <div class="footerAbute">
         <p>
           This project is the first version of my website.This project uses the
           API of <a href="https://www.tvmaze.com/api">tvmaze.com</a>
         </p>
       </div>
+      <!-- Footer Menu Box -->
       <div class="footerMenu">
         <ul>
           <li>MENU</li>
@@ -382,6 +170,7 @@
           <li><a href="index.html">About us</a></li>
         </ul>
       </div>
+      <!-- Footer Icon Box -->
       <div class="footerIcon">
         <a href="https://github.com/amir-mostafa-hs"
           ><i class="bi bi-github"></i
@@ -390,8 +179,14 @@
           href="https://www.linkedin.com/in/amir-mostafa-haji-sadeghian-3753aa226/"
           ><i class="bi bi-linkedin"></i
         ></a>
+        <a href="mailto:amir-mostafa-hs@outlook.com"
+          ><i class="bi bi-envelope-fill"></i
+        ></a>
+        <p></p>
       </div>
     </footer>
+    <!-- Link Axios Script -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Link Bootstrap Script  -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"

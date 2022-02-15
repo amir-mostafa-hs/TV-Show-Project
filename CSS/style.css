@@ -1,13 +1,17 @@
+/* Link Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto&display=swap");
-/* font-family: 'Poppins', sans-serif; */
-/* font-family: 'Roboto', sans-serif; */
+/*! font-family: 'Poppins', sans-serif; */
+/*! font-family: 'Roboto', sans-serif; */
+/* ^^ Sample fonts ^^ */
+/* Style For Body */
 .content {
   background: linear-gradient(to top, #8e9eab, #eef2f3);
   display: grid;
   justify-items: center;
   grid-template-rows: 15vh auto;
+  font-family: "Poppins", sans-serif;
 }
-
+/* Header Style */
 .topHeader {
   position: sticky;
   top: 10px;
@@ -24,12 +28,13 @@
   align-content: center;
   justify-items: center;
 }
-
+/* Header Logo */
 .bi-collection-play-fill {
   font-size: 2.5rem;
   color: rgb(255, 208, 0);
   display: inline-block;
 }
+/* Navbar Menu Style */
 .navMenu {
   width: 100%;
   height: 100%;
@@ -61,9 +66,11 @@
 .itemMenu li a:hover {
   text-shadow: 0px 0px 5px rgb(255, 174, 0);
 }
+/* Navbar Search Box Style */
 .topSearchBox {
   margin: 10px;
 }
+/* Show Video Details Div Style */
 .aboutDiv {
   width: 100vw;
   height: 100vh;
@@ -84,20 +91,23 @@
   display: grid;
   grid-template-rows: 10% 1fr;
 }
+/* Show Video Details Div Buttom */
 .aboutDivClose {
   position: relative;
   left: 95%;
   top: 5%;
 }
-.close-btn {
+.closeBtn {
   margin-top: 8px;
   padding: 0 5px;
   font-size: 20px;
 }
+/* Show Video Details Div Image */
 .aboutDivImg {
   width: 70%;
   justify-self: center;
 }
+/* Show Video Details Div Text */
 .aboutDivText {
   color: black;
   background-color: whitesmoke;
@@ -107,10 +117,33 @@
   border-radius: 5px;
   justify-self: center;
 }
+/* Hidden Event */
 .hidden {
   display: none;
 }
-.mainWeb {
+/* Selector Box */
+.selector {
+  background-color: #373838;
+  width: 86vw;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  text-align: center;
+}
+.selectorLbl {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 5px;
+}
+.selectorSelect {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+}
+/* Content Of All Video Cards */
+.mainContent {
   background-color: #373838;
   width: 86vw;
   min-height: 20vh;
@@ -125,9 +158,9 @@
   column-gap: 15px;
   padding-top: 20px;
 }
-/* #shop-item */
-.shop-item {
-  /* width: 19rem; */
+/* Video Card */
+.videoCard {
+  width: 19rem;
   max-width: 20rem;
   min-width: 18rem;
   max-height: 32rem;
@@ -138,39 +171,68 @@
   background-color: rgb(43, 43, 43);
   border-radius: 10px;
 }
-/* #shop-item-image */
-.shop-item-image {
+/* Video Card Image */
+.videoCardImage {
   box-shadow: 0px 0px 10px 3px black;
   width: 17rem;
   height: 14rem;
 }
-/* #shop-item-caption */
-.shop-item-caption {
+/* Video Card Image Hover Box */
+.imgHover {
+  text-align: center;
+  position: relative;
+  perspective: 500px;
+}
+.imgDetails {
+  width: 80%;
+  height: 70%;
+  padding: 5% 8%;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(90deg);
+  transform-origin: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transition: all 0.4s ease-in;
+}
+.imgHover:hover .imgDetails {
+  transform: translate(-50%, -50%) rotateY(0deg);
+  opacity: 1;
+}
+/* Video Card Name */
+.videoName {
   color: white;
   margin: 0px 20px 0px 20px;
   direction: rtl;
   text-align: center;
   align-self: flex-start;
 }
-/* #shop-item-image-score */
-.airdate {
+/* Video Card Badge */
+.videoEpisode {
+  left: 50%;
+}
+.videoDate {
   top: 100%;
   left: 75%;
 }
-.score {
+.videoScore {
   top: 100%;
   left: 25%;
 }
-.score-badge {
+.videoScoreBadge {
   color: rgb(255, 193, 7);
 }
-/* start #shop-item-button */
-.btn-item-div {
+/* Start Video Card Button */
+.videoCardBtn {
   display: flex;
+  margin-left: 8%;
   flex-wrap: wrap;
   align-items: center;
 }
-.btn-item-shop {
+/* Video Card Play Buttom */
+.videoCardPlayBtn {
   margin: 1px;
   min-width: 2rem;
   min-height: 2rem;
@@ -183,14 +245,14 @@
   align-items: center;
   z-index: 1;
 }
-.btn-item-shop:hover .btn-item-one {
+.videoCardPlayBtn:hover .playBtnIconOne {
   top: 2rem;
 }
-.btn-item-shop:hover .btn-item-two {
+.videoCardPlayBtn:hover .playBtnIconTwo {
   top: 10%;
 }
-/* like button */
-.btn-item-like {
+/*  Video Card Time Buttom */
+.videoCardTimeBtn {
   margin: 1px;
   min-width: 2rem;
   min-height: 2rem;
@@ -202,27 +264,27 @@
   align-items: center;
   z-index: 1;
 }
-.btn-item-like:hover .btn-item-one {
+.videoCardTimeBtn:hover .playBtnIconOne {
   top: 2rem;
 }
-.btn-item-like:hover .btn-item-two {
+.videoCardTimeBtn:hover .playBtnIconTwo {
   top: 10%;
 }
-
-.btn-item-one {
+/* Video Card Buttom Icon Style */
+.playBtnIconOne {
   display: block;
   position: absolute;
   top: 0.1rem;
   transition: all 0.15s ease-in-out;
 }
-.btn-item-two {
+.playBtnIconTwo {
   display: block;
   position: absolute;
   top: -2rem;
   transition: all 0.15s ease-in-out;
 }
-
-.btn-left-about {
+/* Video Card Buttom Pop Up Animation */
+.videoCardPlayBtnPopUp {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   padding-bottom: 5px;
@@ -231,7 +293,7 @@
   visibility: hidden;
   text-align: center;
 }
-.btn-item-shop:hover + .btn-left-about {
+.videoCardPlayBtn:hover + .videoCardPlayBtnPopUp {
   animation-name: leftmove;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
@@ -246,18 +308,18 @@
     left: -40px;
   }
 }
-.btn-right-about {
+.videoCardTimeBtnPopUp {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-top: 2px;
   position: relative;
   left: -36px;
   height: 1.8rem;
-  width: 2.5rem;
+  width: 3rem;
   visibility: hidden;
   text-align: center;
 }
-.btn-item-like:hover + .btn-right-about {
+.videoCardTimeBtn:hover + .videoCardTimeBtnPopUp {
   animation-name: rightmove;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
@@ -271,7 +333,7 @@
     left: -1px;
   }
 }
-
+/* Footer Style */
 .bottomFooter {
   background-color: #1b1b1b;
   width: 86vw;
@@ -283,6 +345,7 @@
   grid-template-columns: 6fr 3fr 3fr;
   column-gap: 10px;
 }
+/* Footer Abute Box */
 .footerAbute {
   padding: 10px;
   border-radius: 10px;
@@ -295,6 +358,7 @@
   font-weight: 700;
   font-family: "Roboto", sans-serif;
 }
+/* Footer Menu Box */
 .footerMenu {
   padding: 10px;
   border-radius: 10px;
@@ -319,6 +383,7 @@
   color: whitesmoke;
   text-shadow: 0px 0px 10px black;
 }
+/* Footer Icon Box */
 .footerIcon {
   padding: 10px;
   border-radius: 10px;
