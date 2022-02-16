@@ -38,8 +38,12 @@ function createVideoCard(
   const divImgHover = divElem();
   divImgHover.className = "imgDetails";
   const p = document.createElement("p");
-  const arraySmalDetails = smalDetails.split(" ").splice(0, 13).join(" ");
-  p.textContent = `${arraySmalDetails} ...`;
+  const editSmalDetails = smalDetails
+    .replace("<p>", "")
+    .split(" ")
+    .splice(0, 12)
+    .join(" ");
+  p.textContent = `${editSmalDetails} ...`;
   divImgHover.append(p);
   divImg.append(divImgHover);
   // Func Create Span Elem
@@ -123,29 +127,79 @@ function createVideoCard(
 }
 
 // Inpurt Data From Api
-
-createVideoCard(
-  167,
-  "https://static.tvmaze.com/uploads/images/original_untouched/8/21962.jpg",
-  "Seeing Things",
-  "Former Louisiana State CID partners Martin Hart and Rustin Cohle give ... test test test",
-  1,
-  1,
-  "2014-01-19",
-  8.8,
-  "Seeing Things",
-  60
-);
-
-createVideoCard(
-  167,
-  "https://static.tvmaze.com/uploads/images/original_untouched/8/21962.jpg",
-  "Seeing Things",
-  "Former Louisiana State CID partners Martin Hart and Rustin Cohle give ...",
-  1,
-  2,
-  "2014-01-19",
-  7.8,
-  "Seeing Things",
-  65
-);
+async function getApiData(url) {
+  try {
+    const apiData = await axios.get(url);
+    return apiData;
+  } catch (error) {
+    console.error(error);
+  }
+}
+// Get Selector
+const videoSeasonSelect = document.getElementById("videoSeasonSelect");
+const videoEpisodeSelect = document.getElementById("videoEpisodeSelect");
+// Data Usage
+getApiData("https://api.tvmaze.com/shows/5/episodes")
+  .then((data) => {
+    const seasonObj = {};
+    const epicodObj = {};
+    Array.from(data.data).forEach((item) => {
+      createVideoCard(
+        item.id,
+        item.image.original,
+        item.name,
+        item.summary,
+        item.season,
+        item.number,
+        item.airdate,
+        item.rating.average,
+        item.name,
+        item.runtime
+      );
+      seasonObj[item.season] = item.season;
+      epicodObj[item.number] = item.number;
+    });
+    for (const key in seasonObj) {
+      const createOption = () => {
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = `Season ${key}`;
+        return option;
+      };
+      videoSeasonSelect.append(createOption());
+    }
+    for (const key in epicodObj) {
+      const createOption = () => {
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = `Episode ${key}`;
+        return option;
+      };
+      videoEpisodeSelect.append(createOption());
+    }
+  })
+  .then(() => {
+    videoSeasonSelect.addEventListener("change", () =>
+      filterVideoCard(videoSeasonSelect.value, videoEpisodeSelect.value)
+    );
+    videoEpisodeSelect.addEventListener("change", () => {
+      filterVideoCard(videoSeasonSelect.value, videoEpisodeSelect.value);
+    });
+    const filterVideoCard = (seasonValue, episodeValue) => {
+      const allVideoCard = document.querySelectorAll(".asideVideoCard");
+      Array.from(allVideoCard).forEach((card) =>
+        card.classList.remove("hidden")
+      );
+      if (seasonValue) {
+        Array.from(allVideoCard)
+          .filter((card) => card.attributes.season.value !== seasonValue)
+          .forEach((card) => card.classList.add("hidden"));
+      }
+      if (episodeValue) {
+        console.log(allVideoCard);
+        Array.from(allVideoCard)
+          .filter((card) => card.attributes.episode.value !== episodeValue)
+          .forEach((card) => card.classList.add("hidden"));
+      }
+    };
+  });
