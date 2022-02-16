@@ -84,40 +84,61 @@
     <!-- Content Of All Video Cards -->
     <!-- Selector Box -->
     <aside class="selector">
-        <label for="videoSelect" class="selectorLbl">Select Episode</label>
-        <select id="videoSelect" class="form-select selectorSelect" name="selectorSelect">
-            <option value=""> --- All Episode --- </option>
-        </select>
+      <label for="videoSeasonSelect" class="selectorLbl">Select Season</label>
+      <select
+        id="videoSeasonSelect"
+        class="form-select selectorSelect"
+        name="videoSeasonSelect"
+      >
+        <option value="">--- All Season ---</option>
+      </select>
+      <label for="videoEpisodeSelect" class="selectorLbl">Select Episode</label>
+      <select
+        id="videoEpisodeSelect"
+        class="form-select selectorSelect"
+        name="videoEpisodeSelect"
+      >
+        <option value="">--- All Episode ---</option>
+      </select>
+      <label for="inputSearch" class="selectorLbl">Search In Text</label>
+      <input
+        id="inputSearch"
+        class="form-control me-2 selectorSelect"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
     </aside>
     <main class="mainContent">
-      <aside class="asideVideoCard">
-        <!-- Video Card Content -->
-        <figure class="videoCard">
-          <!-- Video Card Image -->
-          <div class="position-relative imgHover">
+      <!-- <aside class="asideVideoCard" id="167"> -->
+      <!-- !Video Card Content -->
+      <!-- <figure class="videoCard"> -->
+      <!-- !Video Card Image -->
+      <!-- <div class="position-relative imgHover">
             <img
               class="img-thumbnail videoCardImage"
               src="https://static.tvmaze.com/uploads/images/original_untouched/8/21961.jpg"
               alt="The Long Bright Dark"
-            />
-            <!-- Image Details -->
-            <div class="imgDetails">
+            /> -->
+      <!-- !Image Details -->
+      <!-- <div class="imgDetails">
               <p>
                 Former Louisiana State CID partners Martin Hart and Rustin Cohle
                 give separate statements to a pair ...
               </p>
-            </div>
-            <!-- Video Card Date -->
-            <span class="position-absolute translate-middle badge rounded-pill bg-danger videoEpisode">
+            </div> -->
+      <!--  !Video Card Episode -->
+      <!-- <span class="position-absolute translate-middle badge rounded-pill bg-danger videoEpisode">
                 S00E00
-            </span>
-            <span
+            </span> -->
+      <!-- !Video Card Date -->
+      <!-- <span
               class="position-absolute translate-middle badge rounded-pill bg-danger videoDate"
             >
               2014-01-12</span
-            >
-            <!-- Video Card Score -->
-            <span
+            > -->
+      <!-- !Video Card Score -->
+      <!-- <span
               class="position-absolute translate-middle badge rounded-pill bg-danger videoScore"
             >
               <i class="bi bi-star-fill videoScoreBadge"></i>
@@ -126,21 +147,21 @@
               <i class="bi bi-star-fill videoScoreBadge"></i>
               <i class="bi bi-star-fill videoScoreBadge"></i>
             </span>
-          </div>
-          <!-- Video Card Name -->
-          <figcaption class="videoName">The Long Bright Dark</figcaption>
-          <!-- Video Card Button -->
-          <div class="videoCardBtn">
-            <!-- Video Card Play Buttom -->
-            <button type="button" class="btn bg-danger videoCardPlayBtn">
+          </div> -->
+      <!-- !Video Card Name -->
+      <!-- <figcaption class="videoName">The Long Bright Dark</figcaption> -->
+      <!-- !Video Card Button -->
+      <!-- <div class="videoCardBtn"> -->
+      <!-- !Video Card Play Buttom -->
+      <!-- <button type="button" class="btn bg-danger videoCardPlayBtn">
               <i class="bi bi-play-circle playBtnIconOne"></i>
               <i class="bi bi-play-circle-fill playBtnIconTwo"></i>
             </button>
             <div class="videoCardPlayBtnPopUp bg-danger">
-              <span>Play</span>
-            </div>
-            <!-- Video Card Time Buttom -->
-            <button type="button" class="btn bg-danger videoCardTimeBtn">
+              <span>Show</span>
+            </div> -->
+      <!-- !Video Card Time Buttom -->
+      <!-- <button type="button" class="btn bg-danger videoCardTimeBtn">
               <i class="bi bi-clock playBtnIconOne"></i>
               <i class="bi bi-clock-fill playBtnIconTwo"></i>
             </button>
@@ -149,7 +170,7 @@
             </div>
           </div>
         </figure>
-      </aside>
+      </aside> -->
     </main>
     <!-- Start Footer -->
     <footer class="bottomFooter">
@@ -157,7 +178,8 @@
       <div class="footerAbute">
         <p>
           This project is the first version of my website.This project uses the
-          API of <a href="https://www.tvmaze.com/api">tvmaze.com</a>
+          API of
+          <a href="https://www.tvmaze.com/api" target="_blank">tvmaze.com</a>
         </p>
       </div>
       <!-- Footer Menu Box -->
@@ -166,20 +188,21 @@
           <li>MENU</li>
           <li>---------------</li>
           <li><a href="index.html">Home</a></li>
-          <li><a href="index.html">Move</a></li>
-          <li><a href="index.html">About us</a></li>
+          <li><a href="#">Move</a></li>
+          <li><a href="#">About us</a></li>
         </ul>
       </div>
       <!-- Footer Icon Box -->
       <div class="footerIcon">
-        <a href="https://github.com/amir-mostafa-hs"
+        <a href="https://github.com/amir-mostafa-hs" target="_blank"
           ><i class="bi bi-github"></i
         ></a>
         <a
           href="https://www.linkedin.com/in/amir-mostafa-haji-sadeghian-3753aa226/"
+          target="_blank"
           ><i class="bi bi-linkedin"></i
         ></a>
-        <a href="mailto:amir-mostafa-hs@outlook.com"
+        <a href="mailto:amir-mostafa-hs@outlook.com" target="_blank"
           ><i class="bi bi-envelope-fill"></i
         ></a>
         <p></p>
