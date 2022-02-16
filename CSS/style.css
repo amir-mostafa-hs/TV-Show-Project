@@ -121,6 +121,9 @@
 .hidden {
   display: none;
 }
+.hiddenSearch {
+  display: none;
+}
 /* Selector Box */
 .selector {
   background-color: #373838;

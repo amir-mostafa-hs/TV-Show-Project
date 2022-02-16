@@ -202,4 +202,26 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
           .forEach((card) => card.classList.add("hidden"));
       }
     };
+  })
+  .then(() => {
+    const allCard = document.querySelectorAll(".asideVideoCard");
+    const inputSearch = document.querySelector("#inputSearch");
+    function liveSearch() {
+      for (const iterator of allCard) {
+        if (
+          iterator.textContent
+            .toLowerCase()
+            .includes(inputSearch.value.toLowerCase())
+        ) {
+          iterator.classList.remove("hiddenSearch");
+        } else {
+          iterator.classList.add("hiddenSearch");
+        }
+      }
+    }
+    let searchTimer;
+    inputSearch.addEventListener("input", () => {
+      clearInterval(searchTimer);
+      searchTimer = setTimeout(liveSearch, 500);
+    });
   });
