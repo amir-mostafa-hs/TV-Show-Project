@@ -138,7 +138,7 @@
   margin: 0 5px;
 }
 .selectorSelect {
-  width: 30%;
+  width: min-content;
   display: inline-block;
   text-align: center;
 }

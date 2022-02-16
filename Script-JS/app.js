@@ -6,6 +6,7 @@ function createVideoCard(
   imgSrc,
   imgAlt,
   smalDetails,
+  seasonNum,
   episodeNum,
   dateNum,
   scoreNum,
@@ -15,6 +16,8 @@ function createVideoCard(
   // Aside Video Card
   const aside = document.createElement("aside");
   aside.id = videoId;
+  aside.setAttribute("season", seasonNum);
+  aside.setAttribute("episode", episodeNum);
   aside.className = "asideVideoCard";
   // Video Card Content
   const figure = document.createElement("figure");
@@ -47,8 +50,10 @@ function createVideoCard(
     return span;
   };
   // Video Card Episode
+  seasonNum < 10 && (seasonNum = "0" + seasonNum);
+  episodeNum < 10 && (episodeNum = "0" + episodeNum);
   const spanEpisode = spanElem(
-    episodeNum,
+    `S${seasonNum} - E${episodeNum}`,
     "position-absolute translate-middle badge rounded-pill bg-danger videoEpisode"
   );
   divImg.append(spanEpisode);
@@ -113,16 +118,19 @@ function createVideoCard(
   divBtn.append(btnTimePopUp);
   // Appending
   figure.append(divBtn);
-  aside.append(figure)
+  aside.append(figure);
   mainContent.append(aside);
 }
+
+// Inpurt Data From Api
 
 createVideoCard(
   167,
   "https://static.tvmaze.com/uploads/images/original_untouched/8/21962.jpg",
   "Seeing Things",
   "Former Louisiana State CID partners Martin Hart and Rustin Cohle give ... test test test",
-  "S01E02",
+  1,
+  1,
   "2014-01-19",
   8.8,
   "Seeing Things",
@@ -134,10 +142,10 @@ createVideoCard(
   "https://static.tvmaze.com/uploads/images/original_untouched/8/21962.jpg",
   "Seeing Things",
   "Former Louisiana State CID partners Martin Hart and Rustin Cohle give ...",
-  "S01E02",
+  1,
+  2,
   "2014-01-19",
   7.8,
   "Seeing Things",
   65
 );
-
