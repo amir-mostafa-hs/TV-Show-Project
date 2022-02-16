@@ -289,7 +289,7 @@
   border-bottom-left-radius: 10px;
   padding-bottom: 5px;
   height: 1.8rem;
-  width: 2.5rem;
+  width: 3.1rem;
   visibility: hidden;
   text-align: center;
 }
@@ -302,10 +302,10 @@
 }
 @keyframes leftmove {
   0% {
-    left: -10px;
+    left: -20px;
   }
   100% {
-    left: -40px;
+    left: -50px;
   }
 }
 .videoCardTimeBtnPopUp {
@@ -315,7 +315,7 @@
   position: relative;
   left: -36px;
   height: 1.8rem;
-  width: 3rem;
+  width: 3.5rem;
   visibility: hidden;
   text-align: center;
 }
