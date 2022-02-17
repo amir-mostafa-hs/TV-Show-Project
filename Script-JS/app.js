@@ -110,9 +110,9 @@ function createVideoCard(
   const btnTime = document.createElement("button");
   btnTime.type = "button";
   btnTime.className = "btn bg-danger videoCardTimeBtn";
-  const btnTimeIconOne = iElem("bi bi-play-circle playBtnIconOne");
+  const btnTimeIconOne = iElem("bi bi-clock playBtnIconOne");
   btnTime.append(btnTimeIconOne);
-  const btnTimeIconTwo = iElem("bi bi-play-circle-fill playBtnIconTwo");
+  const btnTimeIconTwo = iElem("bi bi-clock-fill playBtnIconTwo");
   btnTime.append(btnTimeIconTwo);
   divBtn.append(btnTime);
   const btnTimePopUp = divElem();
@@ -177,6 +177,38 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
       };
       videoEpisodeSelect.append(createOption());
     }
+    // Show Video Details
+    const aboutCloseBtn = document.querySelector(".closeBtn");
+    aboutCloseBtn.addEventListener("click", () => {
+      const aboutDiv = document.querySelector(".aboutDiv");
+      aboutDiv.classList.add("hidden");
+    });
+    mainContent.addEventListener("click", (evt) => {
+      if (
+        evt.target.className === "btn bg-danger videoCardPlayBtn" ||
+        evt.target.className === "bi bi-play-circle-fill playBtnIconTwo"
+      ) {
+        function getParent(child, parentClass) {
+          if (child.parentNode.className.split(" ").indexOf(parentClass) >= 0) {
+            const aboutDiv = document.querySelector(".aboutDiv");
+            aboutDiv.classList.remove("hidden");
+            Array.from(data.data).forEach((item) => {
+              if (item.id === Number(child.id)) {
+                const img = document.querySelector(".aboutDivImg");
+                img.src = item.image.original;
+                const p = document.querySelector(".aboutDivText p");
+                p.textContent = item.summary
+                  .replace("<p>", "")
+                  .replace("</p>", "");
+              }
+            });
+          } else {
+            getParent(child.parentNode, parentClass);
+          }
+        }
+        getParent(evt.target.parentNode, "mainContent");
+      }
+    });
   })
   .then(() => {
     videoSeasonSelect.addEventListener("change", () =>
@@ -196,7 +228,6 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
           .forEach((card) => card.classList.add("hidden"));
       }
       if (episodeValue) {
-        console.log(allVideoCard);
         Array.from(allVideoCard)
           .filter((card) => card.attributes.episode.value !== episodeValue)
           .forEach((card) => card.classList.add("hidden"));
