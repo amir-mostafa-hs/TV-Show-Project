@@ -194,8 +194,15 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
             aboutDiv.classList.remove("hidden");
             Array.from(data.data).forEach((item) => {
               if (item.id === Number(child.id)) {
-                const img = document.querySelector(".aboutDivImg");
+                const img = document.querySelector(".imgShow");
                 img.src = item.image.original;
+                img.alt = item.summary;
+                const btn = document.querySelector(".showBtn");
+                btn.addEventListener("click",()=>{
+                  btn.parentElement.addEventListener("submit",(evt)=>{
+                    btn.parentElement.action = item.url;
+                  })
+                })
                 const p = document.querySelector(".aboutDivText p");
                 p.textContent = item.summary
                   .replace("<p>", "")

@@ -107,6 +107,11 @@
 .aboutDivImg {
   width: 50%;
   justify-self: center;
+  text-align: center;
+}
+.showBtn{
+  margin-top: 15px;
+  width: 15rem;
 }
 /* Show Video Details Div Text */
 .aboutDivText {
