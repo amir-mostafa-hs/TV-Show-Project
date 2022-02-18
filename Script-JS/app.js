@@ -143,6 +143,7 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
   .then((data) => {
     const seasonObj = {};
     const epicodObj = {};
+    // Append Video Card
     Array.from(data.data).forEach((item) => {
       createVideoCard(
         item.id,
@@ -159,6 +160,7 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
       seasonObj[item.season] = item.season;
       epicodObj[item.number] = item.number;
     });
+    // Create Season Selector
     for (const key in seasonObj) {
       const createOption = () => {
         const option = document.createElement("option");
@@ -168,6 +170,7 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
       };
       videoSeasonSelect.append(createOption());
     }
+    // Create Episode Selector
     for (const key in epicodObj) {
       const createOption = () => {
         const option = document.createElement("option");
@@ -198,11 +201,11 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
                 img.src = item.image.original;
                 img.alt = item.summary;
                 const btn = document.querySelector(".showBtn");
-                btn.addEventListener("click",()=>{
-                  btn.parentElement.addEventListener("submit",(evt)=>{
+                btn.addEventListener("click", () => {
+                  btn.parentElement.addEventListener("submit", () => {
                     btn.parentElement.action = item.url;
-                  })
-                })
+                  });
+                });
                 const p = document.querySelector(".aboutDivText p");
                 p.textContent = item.summary
                   .replace("<p>", "")
@@ -218,6 +221,7 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
     });
   })
   .then(() => {
+    // Add Selectors Change Event
     videoSeasonSelect.addEventListener("change", () =>
       filterVideoCard(videoSeasonSelect.value, videoEpisodeSelect.value)
     );
@@ -242,6 +246,7 @@ getApiData("https://api.tvmaze.com/shows/5/episodes")
     };
   })
   .then(() => {
+    // Create Live Search
     const allCard = document.querySelectorAll(".asideVideoCard");
     const inputSearch = document.querySelector("#inputSearch");
     function liveSearch() {
