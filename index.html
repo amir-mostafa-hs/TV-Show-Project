@@ -24,7 +24,9 @@
     <!-- Start Header -->
     <header class="topHeader">
       <!-- Header Logo -->
-      <a href="index.html"><i class="bi bi-collection-play-fill"></i></a>
+      <a href="index.html" class="logo"
+        ><i class="bi bi-collection-play-fill"></i
+      ></a>
       <!-- Start Navbar -->
       <nav class="navMenu">
         <!-- Navbar Menu -->
@@ -36,7 +38,7 @@
         <!-- Navbar Form Search -->
         <form class="d-flex topSearchBox">
           <input
-            class="form-control me-2"
+            class="form-control me-2 navSearch"
             type="search"
             placeholder="Search"
             aria-label="Search"
@@ -86,7 +88,7 @@
         class="form-select selectorSelect"
         name="videoSeasonSelect"
       >
-        <option value="">--- All Season ---</option>
+        <option value=""> All Season </option>
       </select>
       <label for="videoEpisodeSelect" class="selectorLbl">Select Episode</label>
       <select
@@ -94,7 +96,7 @@
         class="form-select selectorSelect"
         name="videoEpisodeSelect"
       >
-        <option value="">--- All Episode ---</option>
+        <option value=""> All Episode </option>
       </select>
       <label for="inputSearch" class="selectorLbl">Search In Text</label>
       <input
@@ -182,7 +184,7 @@
       <div class="footerMenu">
         <ul>
           <li>MENU</li>
-          <li>---------------</li>
+          <li><div class="brackLine"></div></li>
           <li><a href="index.html">Home</a></li>
           <li><a href="#">Move</a></li>
           <li><a href="#">About us</a></li>
