@@ -29,10 +29,11 @@
   justify-items: center;
 }
 /* Header Logo */
-.bi-collection-play-fill {
+.logo {
   font-size: 2.5rem;
   color: rgb(255, 208, 0);
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 /* Navbar Menu Style */
 .navMenu {
@@ -69,6 +70,36 @@
 /* Navbar Search Box Style */
 .topSearchBox {
   margin: 10px;
+}
+@media screen and (max-width: 880px) {
+  .logo {
+    font-size: 2rem;
+  }
+  .itemMenu {
+    width: 90%;
+  }
+  .itemMenu li a {
+    font-size: 1rem;
+  }
+  .topSearchBox {
+    align-items: center;
+  }
+  .btn-outline-warning {
+    height: 70%;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  .navSearch {
+    height: 70%;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 645px) {
+  .navSearch {
+    height: 70%;
+    font-size: 0.5rem;
+  }
 }
 /* Show Video Details Div Style */
 .aboutDiv {
@@ -109,7 +140,7 @@
   justify-self: center;
   text-align: center;
 }
-.showBtn{
+.showBtn {
   margin-top: 15px;
   width: 15rem;
 }
@@ -122,6 +153,26 @@
   padding: 10px;
   border-radius: 5px;
   justify-self: center;
+}
+@media screen and (max-width: 880px) {
+  .aboutDivClose {
+    left: 90%;
+  }
+  .showBtn {
+    width: 10rem;
+  }
+  .aboutDivText {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .showBtn {
+    font-size: 0.6rem;
+    width: 5rem;
+  }
+  .closeBtn {
+    font-size: 13px;
+  }
 }
 /* Hidden Event */
 .hidden {
@@ -150,6 +201,27 @@
   width: min-content;
   display: inline-block;
   text-align: center;
+}
+@media screen and (max-width: 1380px) {
+  .selectorLbl {
+    font-size: 1.3rem;
+  }
+  .selectorSelect {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .selectorLbl {
+    font-size: 1rem;
+  }
+  .selectorSelect {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 975px) {
+  .selectorSelect {
+    width: 100%;
+  }
 }
 /* Content Of All Video Cards */
 .mainContent {
@@ -377,6 +449,11 @@
   justify-content: center;
   align-items: center;
 }
+.brackLine{
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
 .footerMenu ul {
   list-style: none;
   padding: 0;
@@ -410,4 +487,19 @@
 .footerIcon a:hover {
   color: whitesmoke;
   text-shadow: 0px 0px 10px black;
+}
+
+@media screen and (max-width: 880px){
+  .footerAbute{
+    font-size: 0.8rem;
+  }
+  .footerMenu li{
+    font-size: 0.7rem;
+  }
+  .footerMenu a{
+    font-size: 0.7rem;
+  }
+  .footerIcon a{
+    font-size: 1.7rem;
+  }
 }
